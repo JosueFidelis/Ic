@@ -1,4 +1,4 @@
-var fileName = 'simple1.cnf';
+var fileName = 'hole4.cnf';
 
   let formula = readFormula(fileName)
   if (formula === 'dsfsafa') {
@@ -60,7 +60,7 @@ suprema = falsiane;
           }else{
             Bclausula[k] = true;
           }
-        }
+        } 
         var Vclausula = false;
         for (let f = 0; f < Bclausula.length; f++) {
           if(Bclausula[f]){
@@ -76,7 +76,6 @@ suprema = falsiane;
     isSat = true;
     if(falso){
       isSat = false;
-      console.log(assignment);
       assignment = nextAssignment(assignment);
     }
   }
@@ -100,7 +99,7 @@ return (clauses.length == CLAUSES)&&(variables.length == VAR)
 
 function readFormula(fileName) {
   const fs = require('fs');
-  let x = ''+fs.readFileSync(fileName);
+  let x = ''+fs.readFileSync(fileName, 'utf8');
   let text = x.split('\n');
   let clauses = readClauses(text);
   let variables = readVariables(clauses);
