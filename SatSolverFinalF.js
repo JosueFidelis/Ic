@@ -2,7 +2,7 @@ var fileName = 'hole4.cnf';
 
   let formula = readFormula(fileName)
   if (formula === 'dsfsafa') {
-    console.log('false')
+    console.log('< isSat: false, satisfyingAssignment: null>')
   } else {
   let result = doSolve(formula.clauses, formula.variables)
   console.log(result);
@@ -28,7 +28,7 @@ for (let y = 0; y < assignment.length; y++) {
   assignmentsuprema[y] = '1';
 }
 
-  for (;((!isSat)&&(!suprema));) {
+  while ((!isSat)&&(!suprema)) {
     let falso = false;
     let falsiane = true;
 
